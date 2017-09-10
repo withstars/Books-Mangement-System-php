@@ -45,10 +45,6 @@ $result=mysqli_fetch_array($res);
         </div>
     </div>
 </nav>
-<h3 style="text-align: center"><?php echo $result['name'];  ?>同学，您好</h3><br/>
-<h4 style="text-align: center">您的信息如下：</h4><br/><br/><br/>
-
-
     <?php
 
 
@@ -57,16 +53,24 @@ $result=mysqli_fetch_array($res);
 
     $resa=mysqli_query($dbc,$sqla);
     $resulta=mysqli_fetch_array($resa);
-        echo "<div style='text-align: center'>";
-        echo "<p>读者证号:{$resulta['reader_id']}</p><br/>";
-        echo "<p>姓名:{$resulta['name']}</p><br/>";
-        echo "<p>性别:{$resulta['sex']}</p><br/>";
-        echo "<p>生日:{$resulta['birth']}</p><br/>";
-        echo "<p>居住地:{$resulta['address']}</p><br/>";
-        echo "<p>电话:{$resulta['telcode']}</p><br/>";
-        echo "<a style='color: #AA0000;font-size: larger' href='reader_info_edit.php'><strong>修改</strong></a>";
-        echo "</div>";
-
     ?>
+<div class="col-xs-5 col-md-offset-3" style="position: relative;top: 25%">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">我的信息</h3>
+    </div>
+    <div class="panel-body">
+        <a href="#" class="list-group-item"><?php echo "<p>读者证号:{$resulta['reader_id']}</p><br/>"; ?></a>
+        <a href="#" class="list-group-item"><?php  echo "<p>姓名:{$resulta['name']}</p><br/>";  ?></a>
+        <a href="#" class="list-group-item"><?php    echo "<p>性别:{$resulta['sex']}</p><br/>"; ?></a>
+        <a href="#" class="list-group-item"><?php echo "<p>生日:{$resulta['birth']}</p><br/>";  ?></a>
+        <a href="#" class="list-group-item"><?php     echo "<p>居住地:{$resulta['address']}</p><br/>";  ?></a>
+        <a href="#" class="list-group-item"><?php    echo "<p>电话:{$resulta['telcode']}</p><br/>"; ?></a>
+        <?php echo "<a style='color: #AA0000;font-size: larger' href='reader_info_edit.php'><strong>修改</strong></a>"; ?>
+    </div>
+</div>
+</div>
+
+
 </body>
 </html>
